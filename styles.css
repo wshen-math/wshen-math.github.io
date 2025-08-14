@@ -1,70 +1,88 @@
-/* Minimal, readable styling similar to simple academic homepages */
+/* Very minimal styles to mimic a classic academic homepage look */
+
 :root {
-  --maxw: 780px;
-  --text: #222;
+  --maxw: 680px;       /* narrow column like the example */
+  --text: #111;
   --muted: #666;
-  --link: #0645ad;
 }
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
+
 body {
   color: var(--text);
-  font: 16px/1.6 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-        Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  font: 16px/1.65 Georgia, "Times New Roman", Times, serif; /* serif like the example */
   background: #fff;
 }
 
-.wrap { max-width: var(--maxw); margin: 2rem auto; padding: 0 1rem; }
+.wrap {
+  max-width: var(--maxw);
+  margin: 2rem auto 3rem;
+  padding: 0 1rem;
+}
+
 .center { text-align: center; }
 
-h1 { font-size: 2rem; margin: 0.25rem 0; }
-.secondary { color: var(--muted); margin-bottom: .25rem; }
-h2 { margin-top: 2rem; font-size: 1.35rem; }
-h3 { margin-top: 1rem; font-size: 1.05rem; }
-p { margin: .75rem 0; }
-
-a { color: var(--link); text-decoration: none; }
-a:hover, a:focus { text-decoration: underline; }
-ol, ul { padding-left: 1.25rem; }
-
-/* simple centered divider using asterisks, created via CSS content */
-.divider {
-  margin: 1rem auto;
-  text-align: center;
-  letter-spacing: .5rem;
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.25rem 0 0.15rem;
+}
+.cn {
+  margin-top: 0.15rem;
   color: var(--muted);
 }
+
+h2 {
+  font-size: 1.25rem;
+  margin: 1.75rem 0 0.75rem;
+}
+h3 {
+  font-size: 1.05rem;
+  margin: 1.1rem 0 0.5rem;
+}
+p { margin: 0.75rem 0; }
+
+/* Plain links: underlined, default-ish color */
+a { color: #0645ad; text-decoration: underline; }
+a:visited { color: #0b0080; }
+a:hover, a:focus { text-decoration: none; }
+
+ol, ul { padding-left: 1.25rem; margin: 0.4rem 0 0.9rem; }
+ol.papers, ol.slides { list-style: decimal; }
+
+/* Top text navigation — just inline links with spacing */
+.topnav {
+  margin: 0.25rem 0;
+}
+.topnav a {
+  margin: 0 0.6rem;
+  text-decoration: underline;
+}
+
+/* Star divider exactly like a line of "* * *" */
+.divider {
+  text-align: center;
+  letter-spacing: .35rem;
+  color: var(--muted);
+  margin: 0.9rem auto;
+}
 .divider::before {
-  content: '* * *';
-  display: inline-block;
+  content: "* * *";
 }
 
-/* top nav */
-.nav { display: inline-flex; gap: 1rem; margin: .5rem 0; }
-.nav a { font-weight: 500; }
-
-/* headshot (optional) */
-.headshot { margin: 0; }
-.headshot img {
+/* Headshot (optional) */
+.photo { margin: 0; }
+.photo img {
   width: 160px; height: 160px;
-  object-fit: cover; border-radius: 50%;
-  display: block; margin: 0.5rem auto 0;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0.25rem auto 0.4rem;
 }
 
-/* footer columns (wraps on small screens) */
-ul.columns {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
-  gap: .25rem .75rem;
-}
+/* External links: simple vertical list (no grid) */
+ul.links { list-style: disc; }
 
-/* accessibility niceties */
+/* Slightly nicer focus ring for keyboard users */
 :focus-visible { outline: 2px solid; outline-offset: 2px; }
-
-/* dark mode */
-@media (prefers-color-scheme: dark) {
-  body { background: #111; color: #e5e5e5; }
-  .secondary, .divider { color: #aaa; }
-  a { color: #76a9ff; }
-}
