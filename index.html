@@ -4,65 +4,176 @@
   <meta charset="utf-8">
   <title>Your Name — Homepage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Minimal, typography-first styling to mirror the referenced site’s feel -->
   <style>
-    :root{--w:860px}
-    body{font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; max-width: var(--w); margin: 40px auto; line-height:1.6; padding:0 16px; color:#222}
-    header{display:flex; gap:20px; align-items:center; margin-bottom:16px; flex-wrap:wrap}
-    header img{width:120px; height:120px; object-fit:cover; border-radius:8px}
-    nav a{margin-right:16px; text-decoration:none}
-    h2{margin-top:36px; border-top:1px solid #e6e6e6; padding-top:16px}
-    ul{padding-left:20px}
-    .muted{color:#666}
-    a{color:#0645AD}
+    :root {
+      --maxw: 820px;
+    }
+    html, body { margin:0; padding:0; }
+    body {
+      font-family: -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      color: #111;
+      background: #fff;
+    }
+    .wrap {
+      max-width: var(--maxw);
+      margin: 32px auto 80px;
+      padding: 0 16px;
+    }
+    /* Top header */
+    .center { text-align: center; }
+    h1 {
+      font-size: clamp(28px, 4.5vw, 40px);
+      margin: 8px 0 2px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .native-name {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: #333;
+    }
+    .rule {
+      margin: 16px auto;
+      width: 100%;
+      height: 1px;
+      background: #e6e6e6;
+    }
+    /* Simple centered nav */
+    nav {
+      margin: 10px 0 14px;
+      font-size: 16px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #0645ad;
+      margin: 0 10px;
+    }
+    nav a:hover, a:hover { text-decoration: underline; }
+    /* Photo block */
+    .photo {
+      display: block;
+      margin: 18px auto 8px;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px; /* square-ish like the example; change to 50% for circular */
+    }
+    /* Contact lines centered, small and muted */
+    .contact {
+      font-size: 15px;
+      color: #444;
+      text-align: center;
+      margin: 6px 0 22px;
+    }
+    /* Section headings and content */
+    h2 {
+      font-size: 22px;
+      margin: 28px 0 8px;
+    }
+    h3 { margin: 18px 0 6px; font-size: 18px; }
+    ul { padding-left: 20px; margin: 8px 0 16px; }
+    li { margin: 4px 0; }
+    a { color: #0645ad; }
+    /* Second separator between major blocks, to echo the example */
+    .section-rule {
+      height: 1px; background: #e6e6e6; margin: 26px 0;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <!-- replace photo.jpg after you upload your picture -->
-    <img src="photo.jpg" alt="Your Name headshot" onerror="this.style.display='none'">
-    <div>
+  <main class="wrap">
+
+    <!-- ===== Top area (name, native name, nav, photo, short intro) ===== -->
+    <div class="center">
       <h1>Your Name</h1>
-      <div class="muted">Your role (e.g., PhD student / Researcher)</div>
-      <div>Email: <a href="mailto:you@example.com">you@example.com</a></div>
+      <div class="native-name">（Your Native Name / Optional）</div>
+      <div class="rule"></div>
+
       <nav>
-        <a href="#research">Research</a> ·
-        <a href="#notes">Notes</a> ·
-        <a href="#teaching">Teaching</a> ·
-        <a href="resume.pdf">CV</a>
+        <a href="#research">Research</a>
+        <a href="#notes">Notes</a>
+        <a href="#teaching">Teaching</a>
       </nav>
+
+      <div class="rule"></div>
+
+      <!-- Replace photo.jpg after you upload your picture -->
+      <img class="photo" src="photo.jpg" alt="Your Name headshot" onerror="this.style.display='none'">
+
+      <p>I am a <em>your position</em> in <em>your field</em> at <em>Your Institution</em>. Here is my <a href="resume.pdf">CV</a>.</p>
+      <p class="contact">
+        Email: <span>you [at] example.edu</span><br>
+        Office: <span>Building / Room, Institution</span>
+      </p>
     </div>
-  </header>
 
-  <p>Two-sentence bio about what you do and what you’re interested in.</p>
+    <div class="section-rule"></div>
 
-  <h2 id="research">Research</h2>
-  <p>Short summary of your research interests. Keywords are helpful.</p>
-  <h3>Papers & Preprints</h3>
-  <ul>
-    <li>Title of Paper, with <a href="#">link</a> or <a href="#">arXiv</a>.</li>
-    <li>Another paper title, Journal (Year): pages, <a href="#">doi</a>.</li>
-  </ul>
+    <!-- ===== Research ===== -->
+    <section id="research">
+      <h2>Research</h2>
+      <p>My research interests include … (one or two sentences, keywords are helpful).</p>
 
-  <h2 id="notes">Notes</h2>
-  <ul>
-    <li><a href="my-note-1.pdf">My Note 1</a> — one line description.</li>
-    <li><a href="my-note-2.pdf">My Note 2</a> — one line description.</li>
-  </ul>
+      <h3>Papers &amp; Preprints</h3>
+      <ul>
+        <li>Title of Paper, with <a href="#">link</a> or <a href="#">arXiv</a>.</li>
+        <li>Another paper title, Journal (Year): pages, <a href="#">doi</a>.</li>
+      </ul>
 
-  <h2 id="teaching">Teaching</h2>
-  <h3>Instructor</h3>
-  <ul>
-    <li>COURSE 101, Term Year, University — <a href="syllabus.pdf">Syllabus</a> · <a href="lecture-notes.pdf">Lecture notes</a></li>
-  </ul>
-  <h3>Teaching Assistant</h3>
-  <ul>
-    <li>COURSE 201, Year, University</li>
-  </ul>
+      <h3>Research Notes</h3>
+      <ul>
+        <li>Functoriality of … — <a href="note-1.pdf">pdf</a>.</li>
+      </ul>
+    </section>
 
-  <h2 id="links">External links</h2>
-  <ul>
-    <li><a href="https://scholar.google.com">Google Scholar</a></li>
-    <li><a href="https://www.linkedin.com">LinkedIn</a></li>
-  </ul>
+    <div class="section-rule"></div>
+
+    <!-- ===== Notes ===== -->
+    <section id="notes">
+      <h2>Notes</h2>
+      <ul>
+        <li><a href="my-note-1.pdf">Sheaf theory in …</a></li>
+        <li><a href="my-note-2.pdf">h-principle in …</a></li>
+      </ul>
+
+      <h3>Slides</h3>
+      <ul>
+        <li>Talk title — <a href="talk-1.pdf">slides</a></li>
+        <li>Another talk — <a href="talk-2.pdf">slides</a></li>
+      </ul>
+    </section>
+
+    <div class="section-rule"></div>
+
+    <!-- ===== Teaching ===== -->
+    <section id="teaching">
+      <h2>Teaching</h2>
+
+      <h3>Instructor</h3>
+      <ul>
+        <li>COURSE 123, Term Year, University — <a href="syllabus.pdf">Syllabus</a>, <a href="lecture-notes.pdf">Lecture notes</a></li>
+      </ul>
+
+      <h3>Teaching Assistant</h3>
+      <ul>
+        <li>COURSE 201, Year, University</li>
+      </ul>
+    </section>
+
+    <div class="section-rule"></div>
+
+    <!-- ===== External links ===== -->
+    <section id="links">
+      <h2>External links</h2>
+      <ul>
+        <li><a href="https://scholar.google.com">Google Scholar</a></li>
+        <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+      </ul>
+    </section>
+
+  </main>
 </body>
 </html>
