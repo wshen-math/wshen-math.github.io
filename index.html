@@ -1,137 +1,156 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Your Name — Homepage</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Minimal, typography-first styling to mirror the referenced site’s feel -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root {
-      --maxw: 820px;
+    /* ====== Tunables ====== */
+    :root{
+      --maxw: 780px;      /* page width */
+      --fg: #111;         /* text color */
+      --muted: #555;      /* muted text */
+      --rule: #e6e6e6;    /* thin line color */
+      --link: #0645ad;    /* link color */
+      --photo: 190px;     /* photo size (square) */
+      --font: "Georgia", "Times New Roman", serif; /* academic serif vibe */
     }
+
+    /* ====== Base ====== */
     html, body { margin:0; padding:0; }
     body {
-      font-family: -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.65;
-      color: #111;
-      background: #fff;
+      font: 16px/1.7 var(--font);
+      color: var(--fg);
+      background:#fff;
     }
-    .wrap {
-      max-width: var(--maxw);
-      margin: 32px auto 80px;
-      padding: 0 16px;
-    }
-    /* Top header */
-    .center { text-align: center; }
-    h1 {
-      font-size: clamp(28px, 4.5vw, 40px);
-      margin: 8px 0 2px;
+    a{ color: var(--link); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{ max-width: var(--maxw); margin: 28px auto 80px; padding: 0 16px; }
+
+    /* ====== Top (mirrors the example’s feel) ====== */
+    .top{ text-align:center; }
+    .top h1{
+      font-size: clamp(28px, 4.4vw, 40px);
+      margin: 6px 0 4px;
       font-weight: 700;
-      letter-spacing: 0.2px;
+      letter-spacing: .2px;
     }
-    .native-name {
-      margin: 0 0 8px;
-      font-size: 18px;
-      color: #333;
-    }
-    .rule {
-      margin: 16px auto;
-      width: 100%;
-      height: 1px;
-      background: #e6e6e6;
-    }
-    /* Simple centered nav */
-    nav {
-      margin: 10px 0 14px;
+    .native{ margin: 0 0 8px; color: var(--muted); font-size: 17px; }
+    .rule{ height:1px; background: var(--rule); margin: 14px auto; }
+
+    nav{
       font-size: 16px;
+      margin: 10px 0 12px;
     }
-    nav a {
-      text-decoration: none;
-      color: #0645ad;
-      margin: 0 10px;
+    nav a{ margin: 0 6px; }
+    nav .sep{ color: #999; margin: 0 4px; }
+
+    /* ====== Intro block with photo on the right ====== */
+    .intro{
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: start;
     }
-    nav a:hover, a:hover { text-decoration: underline; }
-    /* Photo block */
-    .photo {
-      display: block;
-      margin: 18px auto 8px;
-      width: 180px;
-      height: 180px;
+    .intro p{ margin: 0 0 10px; }
+    .photo{
+      width: var(--photo);
+      height: var(--photo);
       object-fit: cover;
-      border-radius: 6px; /* square-ish like the example; change to 50% for circular */
+      border-radius: 6px;   /* square-ish like the example */
     }
-    /* Contact lines centered, small and muted */
-    .contact {
+    .contact{
+      color: var(--muted);
+      margin-top: 8px;
       font-size: 15px;
-      color: #444;
-      text-align: center;
-      margin: 6px 0 22px;
     }
-    /* Section headings and content */
-    h2 {
-      font-size: 22px;
-      margin: 28px 0 8px;
+
+    /* ====== Sections ====== */
+    section{ margin-top: 26px; }
+    h2{
+      font-size: 21px;
+      margin: 0 0 8px;
+      font-weight: 700;
     }
-    h3 { margin: 18px 0 6px; font-size: 18px; }
-    ul { padding-left: 20px; margin: 8px 0 16px; }
-    li { margin: 4px 0; }
-    a { color: #0645ad; }
-    /* Second separator between major blocks, to echo the example */
-    .section-rule {
-      height: 1px; background: #e6e6e6; margin: 26px 0;
+    h3{ font-size: 18px; margin: 16px 0 6px; }
+    ul{ margin: 6px 0 14px; padding-left: 20px; }
+    li{ margin: 4px 0; }
+
+    /* Make it single-column on small screens */
+    @media (max-width: 640px){
+      .intro{
+        grid-template-columns: 1fr;
+      }
+      .photo{
+        justify-self: center;
+      }
     }
   </style>
 </head>
 <body>
-  <main class="wrap">
+  <div class="wrap">
 
-    <!-- ===== Top area (name, native name, nav, photo, short intro) ===== -->
-    <div class="center">
+    <!-- ===== TOP AREA ===== -->
+    <header class="top">
       <h1>Your Name</h1>
-      <div class="native-name">（Your Native Name / Optional）</div>
+      <div class="native">（Optional native name / 汉字名 / …）</div>
+
       <div class="rule"></div>
 
-      <nav>
-        <a href="#research">Research</a>
-        <a href="#notes">Notes</a>
+      <nav aria-label="primary">
+        <a href="#research">Research</a><span class="sep">·</span>
+        <a href="#notes">Notes</a><span class="sep">·</span>
         <a href="#teaching">Teaching</a>
       </nav>
 
       <div class="rule"></div>
+    </header>
 
-      <!-- Replace photo.jpg after you upload your picture -->
+    <!-- ===== INTRO WITH PHOTO ON RIGHT ===== -->
+    <section class="intro" aria-labelledby="about">
+      <div>
+        <p id="about">
+          I am a <em>your position</em> in <em>your field</em> at <em>Your Institution</em>.
+          My research interests include X, Y, and Z. Here is my <a href="resume.pdf">CV</a>.
+        </p>
+        <p class="contact">
+          Email: you [at] example.edu<br>
+          Office: Building / Room, Institution
+        </p>
+      </div>
+      <!-- Replace photo.jpg after uploading; it will hide if missing -->
       <img class="photo" src="photo.jpg" alt="Your Name headshot" onerror="this.style.display='none'">
+    </section>
 
-      <p>I am a <em>your position</em> in <em>your field</em> at <em>Your Institution</em>. Here is my <a href="resume.pdf">CV</a>.</p>
-      <p class="contact">
-        Email: <span>you [at] example.edu</span><br>
-        Office: <span>Building / Room, Institution</span>
-      </p>
-    </div>
+    <!-- ===== SEPARATOR ===== -->
+    <div class="rule" style="margin:24px 0;"></div>
 
-    <div class="section-rule"></div>
-
-    <!-- ===== Research ===== -->
+    <!-- ===== RESEARCH ===== -->
     <section id="research">
       <h2>Research</h2>
-      <p>My research interests include … (one or two sentences, keywords are helpful).</p>
+      <p>One or two sentences overview.</p>
 
       <h3>Papers &amp; Preprints</h3>
       <ul>
-        <li>Title of Paper, with <a href="#">link</a> or <a href="#">arXiv</a>.</li>
-        <li>Another paper title, Journal (Year): pages, <a href="#">doi</a>.</li>
+        <li>
+          Paper title — with <a href="#">link</a> or <a href="#">arXiv</a>.
+        </li>
+        <li>
+          Another paper title — Journal (Year), <a href="#">doi</a>.
+        </li>
       </ul>
 
       <h3>Research Notes</h3>
       <ul>
-        <li>Functoriality of … — <a href="note-1.pdf">pdf</a>.</li>
+        <li>Note title — <a href="note-1.pdf">pdf</a></li>
       </ul>
     </section>
 
-    <div class="section-rule"></div>
+    <div class="rule" style="margin:24px 0;"></div>
 
-    <!-- ===== Notes ===== -->
+    <!-- ===== NOTES ===== -->
     <section id="notes">
       <h2>Notes</h2>
       <ul>
@@ -146,9 +165,9 @@
       </ul>
     </section>
 
-    <div class="section-rule"></div>
+    <div class="rule" style="margin:24px 0;"></div>
 
-    <!-- ===== Teaching ===== -->
+    <!-- ===== TEACHING ===== -->
     <section id="teaching">
       <h2>Teaching</h2>
 
@@ -163,9 +182,9 @@
       </ul>
     </section>
 
-    <div class="section-rule"></div>
+    <div class="rule" style="margin:24px 0;"></div>
 
-    <!-- ===== External links ===== -->
+    <!-- ===== LINKS ===== -->
     <section id="links">
       <h2>External links</h2>
       <ul>
@@ -174,6 +193,6 @@
       </ul>
     </section>
 
-  </main>
+  </div>
 </body>
 </html>
