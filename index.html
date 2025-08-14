@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Your Name — Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root{--w:860px}
+    body{font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; max-width: var(--w); margin: 40px auto; line-height:1.6; padding:0 16px; color:#222}
+    header{display:flex; gap:20px; align-items:center; margin-bottom:16px; flex-wrap:wrap}
+    header img{width:120px; height:120px; object-fit:cover; border-radius:8px}
+    nav a{margin-right:16px; text-decoration:none}
+    h2{margin-top:36px; border-top:1px solid #e6e6e6; padding-top:16px}
+    ul{padding-left:20px}
+    .muted{color:#666}
+    a{color:#0645AD}
+  </style>
+</head>
+<body>
+  <header>
+    <!-- replace photo.jpg after you upload your picture -->
+    <img src="photo.jpg" alt="Your Name headshot" onerror="this.style.display='none'">
+    <div>
+      <h1>Your Name</h1>
+      <div class="muted">Your role (e.g., PhD student / Researcher)</div>
+      <div>Email: <a href="mailto:you@example.com">you@example.com</a></div>
+      <nav>
+        <a href="#research">Research</a> ·
+        <a href="#notes">Notes</a> ·
+        <a href="#teaching">Teaching</a> ·
+        <a href="resume.pdf">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <p>Two-sentence bio about what you do and what you’re interested in.</p>
+
+  <h2 id="research">Research</h2>
+  <p>Short summary of your research interests. Keywords are helpful.</p>
+  <h3>Papers & Preprints</h3>
+  <ul>
+    <li>Title of Paper, with <a href="#">link</a> or <a href="#">arXiv</a>.</li>
+    <li>Another paper title, Journal (Year): pages, <a href="#">doi</a>.</li>
+  </ul>
+
+  <h2 id="notes">Notes</h2>
+  <ul>
+    <li><a href="my-note-1.pdf">My Note 1</a> — one line description.</li>
+    <li><a href="my-note-2.pdf">My Note 2</a> — one line description.</li>
+  </ul>
+
+  <h2 id="teaching">Teaching</h2>
+  <h3>Instructor</h3>
+  <ul>
+    <li>COURSE 101, Term Year, University — <a href="syllabus.pdf">Syllabus</a> · <a href="lecture-notes.pdf">Lecture notes</a></li>
+  </ul>
+  <h3>Teaching Assistant</h3>
+  <ul>
+    <li>COURSE 201, Year, University</li>
+  </ul>
+
+  <h2 id="links">External links</h2>
+  <ul>
+    <li><a href="https://scholar.google.com">Google Scholar</a></li>
+    <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+  </ul>
+</body>
+</html>
