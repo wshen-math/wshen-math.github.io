@@ -1,0 +1,70 @@
+/* Minimal, readable styling similar to simple academic homepages */
+:root {
+  --maxw: 780px;
+  --text: #222;
+  --muted: #666;
+  --link: #0645ad;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  color: var(--text);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  background: #fff;
+}
+
+.wrap { max-width: var(--maxw); margin: 2rem auto; padding: 0 1rem; }
+.center { text-align: center; }
+
+h1 { font-size: 2rem; margin: 0.25rem 0; }
+.secondary { color: var(--muted); margin-bottom: .25rem; }
+h2 { margin-top: 2rem; font-size: 1.35rem; }
+h3 { margin-top: 1rem; font-size: 1.05rem; }
+p { margin: .75rem 0; }
+
+a { color: var(--link); text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; }
+ol, ul { padding-left: 1.25rem; }
+
+/* simple centered divider using asterisks, created via CSS content */
+.divider {
+  margin: 1rem auto;
+  text-align: center;
+  letter-spacing: .5rem;
+  color: var(--muted);
+}
+.divider::before {
+  content: '* * *';
+  display: inline-block;
+}
+
+/* top nav */
+.nav { display: inline-flex; gap: 1rem; margin: .5rem 0; }
+.nav a { font-weight: 500; }
+
+/* headshot (optional) */
+.headshot { margin: 0; }
+.headshot img {
+  width: 160px; height: 160px;
+  object-fit: cover; border-radius: 50%;
+  display: block; margin: 0.5rem auto 0;
+}
+
+/* footer columns (wraps on small screens) */
+ul.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: .25rem .75rem;
+}
+
+/* accessibility niceties */
+:focus-visible { outline: 2px solid; outline-offset: 2px; }
+
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+  body { background: #111; color: #e5e5e5; }
+  .secondary, .divider { color: #aaa; }
+  a { color: #76a9ff; }
+}
