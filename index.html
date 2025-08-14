@@ -3,11 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
   <title>Your Name — Homepage</title>
   <meta name="description" content="Personal academic homepage">
   <link rel="stylesheet" href="styles.css">
-
   <!-- MathJax (optional; safe to keep even if you don't use math) -->
   <script>
     window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
@@ -18,25 +16,25 @@
   <main class="wrap">
     <header class="center">
       <h1>Your Name</h1>
-      <div class="secondary">(other name)</div>
+      <div class="cn">(other name)</div>
 
-      <div class="divider" aria-hidden="true"></div>
+      <p class="divider">*</p>
 
-      <nav class="nav" aria-label="Section navigation">
+      <p class="topnav">
         <a href="#research">Research</a>
         <a href="#notes">Notes</a>
         <a href="#teaching">Teaching</a>
-      </nav>
+      </p>
 
-      <div class="divider" aria-hidden="true"></div>
+      <p class="divider">*</p>
 
-      <figure class="headshot">
+      <p class="photo">
         <!-- Replace img/profile.jpg with your photo (optional) -->
         <img src="img/profile.jpg" alt="Profile photo" onerror="this.style.display='none'">
-      </figure>
+      </p>
 
       <p>
-        I am a <em>your role</em> at <strong>Your Institution</strong>.
+        I am a <em>your role</em> in <strong>Your Institution</strong>.
         <a href="resume.pdf">Here is my CV</a>.
       </p>
       <p>
@@ -48,66 +46,64 @@
         <strong>Office</strong>: Building / Room
       </p>
 
-      <div class="divider" aria-hidden="true"></div>
+      <p class="divider">*</p>
     </header>
 
     <section id="research">
       <h2>Research</h2>
       <p>
-        Brief description of your interests. You can include inline math like
-        $E=mc^2$ and references.
+        Short paragraph about your area. Inline math like $E=mc^2$ will render.
       </p>
 
       <h3>Papers and Preprints</h3>
-      <ol reversed>
-        <li>
-          Title of paper, with <a href="#">coauthors</a>,
-          <a href="#">journal</a>, <a href="#">arXiv</a>.
-        </li>
-        <li>
-          Another title, <a href="#">arXiv</a>.
-        </li>
+      <ol class="papers" reversed>
+        <li>Title of paper, with <a href="#">coauthors</a>, <a href="#">journal</a>, <a href="#">arXiv</a>.</li>
+        <li>Another title, <a href="#">arXiv</a>.</li>
       </ol>
+
+      <h3>Research Notes</h3>
+      <ul>
+        <li>Functoriality of … — <a href="#">PDF</a>.</li>
+      </ul>
     </section>
+
+    <p class="divider">*</p>
 
     <section id="notes">
       <h2>Notes</h2>
       <ul>
-        <li><a href="#">Sheaf theory in symplectic geometry (PDF)</a></li>
-        <li><a href="#">h-principle in symplectic geometry (PDF)</a></li>
+        <li><a href="#">h-principle in symplectic geometry</a></li>
+        <li><a href="#">Sheaf theory in symplectic geometry</a></li>
       </ul>
 
       <h3>Slides</h3>
-      <ol reversed>
+      <ol class="slides" reversed>
         <li><a href="#">Talk title — venue</a></li>
         <li><a href="#">Another talk — venue</a></li>
       </ol>
-
-      <div class="divider" aria-hidden="true"></div>
     </section>
+
+    <p class="divider">*</p>
 
     <section id="teaching">
       <h2>Teaching</h2>
 
       <h3>Instructor</h3>
       <ul>
-        <li>
-          MATH 123, Course Name, Term, University,
-          <a href="#">Syllabus</a>, <a href="#">Lecture notes</a>
-        </li>
+        <li>MATH 123, Course Name, Term, University, <a href="#">Syllabus</a>, <a href="#">Lecture notes</a></li>
       </ul>
 
       <h3>Teaching Assistant</h3>
       <ul>
         <li>MATH 101, Course Name, Term, University</li>
       </ul>
-
-      <div class="divider" aria-hidden="true"></div>
     </section>
+
+    <p class="divider">*</p>
 
     <footer>
       <h2>External links</h2>
-      <ul class="columns">
+      <ul class="links">
         <li><a href="#">Department</a></li>
         <li><a href="#">Seminar link</a></li>
         <li><a href="#">Another link</a></li>
