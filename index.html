@@ -5,7 +5,7 @@
   <title>Your Name — Homepage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    /* ===== Layout ===== */
+    /* Layout */
     body {
       margin: 0;
       font-family: Times, "Times New Roman", serif;
@@ -13,23 +13,23 @@
       color: #000;
     }
     .container {
-      width: 810px;          /* matches the original width */
-      max-width: 92vw;       /* keeps it readable on phones */
+      width: 810px;
+      max-width: 92vw;
       margin: 0 auto;
       padding: 24px 0 64px;
     }
 
-    /* ===== Type ===== */
+    /* Type */
     .name-en { font-family: Coronetscript, cursive; font-weight: bold; font-size: 28px; margin: 0; }
     .name-zh { font-family: Times, "Times New Roman", serif; font-weight: bold; font-size: 28px; margin: 0; }
     .p { font-size: 18px; line-height: 1.45; margin: 0 0 10px; }
     .section-title { font-size: 18px; font-weight: bold; margin: 0 0 6px; }
     .rule { border: 0; border-top: 1px solid #000; margin: 16px 0; }
 
-    /* ===== Simple nav ===== */
+    /* Nav */
     .nav {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr; /* 3 links */
+      grid-template-columns: 1fr 1fr 1fr;
       text-align: center;
       margin: 10px 0;
       gap: 6px;
@@ -37,17 +37,150 @@
     .nav a { text-decoration: none; color: inherit; font-weight: bold; font-size: 18px; }
     .nav a:hover { text-decoration: underline; }
 
-    /* ===== Rows ===== */
+    /* Header row */
     .top-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: baseline;
       gap: 12px;
     }
+
+    /* Bio row */
     .bio-row {
       display: grid;
       grid-template-columns: 220px 1fr;
       gap: 20px;
       align-items: start;
     }
-    .photo { width: 200px; height: a
+    .photo {
+      width: 200px;
+      height: auto;
+      display: block;
+    }
+
+    
+    .line {
+      font-size: 18px;
+      margin-bottom: 6.5px;
+    }
+    .num {
+      display: inline-block;
+      width: 2ch;
+    }
+
+    /* Links */
+    a { color: inherit; }
+    a:focus { outline: 2px dotted #666; outline-offset: 2px; }
+
+    /* Small helpers */
+    .spacer-8 { height: 8px; }
+    .spacer-12 { height: 12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Names -->
+    <div class="top-row">
+      <p class="name-zh">Your Name</p>
+      <p class="name-en"><span lang="zh">(other name)</span></p>
+    </div>
+
+    <hr class="rule" />
+
+    <!-- Nav -->
+    <nav class="nav">
+      <a href="#research">Research</a>
+      <a href="#notes">Notes</a>
+      <a href="#teaching">Teaching</a>
+    </nav>
+
+    <hr class="rule" />
+
+    <!-- Bio -->
+    <div class="bio-row">
+      <div>
+        <img class="photo" src="photo.jpg" alt="Portrait of Your Name" />
+      </div>
+      <div>
+        <p class="p">
+          I am a 
+          Here is my 
+        </p>
+        <p class="p">
+          I obtained 
+        </p>
+        <p class="p">Email: youremail [at] usc.edu</p>
+        <p class="p">Office: Your Office, USC.</p>
+      </div>
+    </div>
+
+    <hr class="rule" />
+
+    <!-- Research -->
+    <section id="research">
+      <p class="section-title">Research</p>
+      <p class="p">
+        My research interest is 
+      </p>
+      <p class="p">
+        More specifically, 
+      </p>
+
+      <div class="spacer-12"></div>
+
+      <p class="section-title">Papers and Preprints</p>
+
+      <p class="line"><span class="num">3.</span> </p>
+
+      <p class="line"><span class="num">2.</span> </p>
+
+      <p class="line"><span class="num">1.</span> </p>
+
+      <div class="spacer-12"></div>
+
+      <p class="section-title">Research Notes</p>
+      <p class="line"><span class="num">1.</span> </p>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- Notes -->
+    <section id="notes">
+      <p class="section-title">Notes</p>
+      <p class="line"><span class="num">2.</span> </p>
+      <p class="line"><span class="num">1.</span> </p>
+
+      <div class="spacer-12"></div>
+
+      <p class="section-title">Slides</p>
+      <p class="line"><span class="num">2.</span> </p>
+      <p class="line"><span class="num">1.</span> </p>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- Teaching -->
+    <section id="teaching">
+      <p class="section-title">Teaching</p>
+
+      <p class="p"><strong>Instructor</strong></p>
+      <p class="line"><span class="num">•</span> MATH </p>
+
+      <div class="spacer-8"></div>
+
+      <p class="p"><strong>Teaching Assistant</strong></p>
+      <p class="line"><span class="num">•</span> MATH </p>
+      <p class="line"><span class="num">•</span> MATH </p>
+      <p class="line"><span class="num">•</span> MATH </p>
+      <p class="line"><span class="num">•</span> MATH </p>
+      <p class="line"><span class="num">•</span> MATH </p>
+    </section>
+
+    <hr class="rule" />
+
+  
+
+  </div>
+</body>
+</html>
