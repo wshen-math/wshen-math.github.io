@@ -1,155 +1,276 @@
 <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Your Name — Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* Layout */
+    body {
+      margin: 0;
+      font-family: Times, "Times New Roman", serif;
+      background: #fff;
+      color: #000;
+    }
+    .container {
+      width: 810px;
+      max-width: 92vw;
+      margin: 0 auto;
+      padding: 24px 0 64px;
+    }
 
-<html>
+    /* Type */
+    .name-en { font-family: Coronetscript, cursive; font-weight: bold; font-size: 28px; margin: 0; }
+    .name-zh { font-family: Times, "Times New Roman", serif; font-weight: bold; font-size: 28px; margin: 0; }
+    .p { font-size: 18px; line-height: 1.45; margin: 0 0 10px; }
+    .section-title { font-size: 18px; font-weight: bold; margin: 0 0 6px; }
+    .rule { border: 0; border-top: 1px solid #000; margin: 16px 0; }
 
-    <head>
-        <title>[page name]</title>
-        <meta charset='utf-8' />
-        <style>
-            body  {
-                margin: 0 auto;
-                width: 810px;
-            }
-            #p1 { font-family: Coronetscript, cursive ; font-weight: bold; font-size: 28px; }
-            #p3 { font-family: Times ; font-weight: bold; font-size: 28px; }
-            #p2 { font-family: Times; font-size: 18px; }
-            #research { font-family: Times; font-size: 18px; }
-            #writing { font-family: Times; font-size: 18px; }
-            #teaching { font-family: Times; font-size: 18px; }
-        </style>
-    </head>
+    /* Nav */
+    .nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      text-align: center;
+      margin: 10px 0;
+      gap: 6px;
+    }
+    .nav a { text-decoration: none; color: inherit; font-weight: bold; font-size: 18px; }
+    .nav a:hover { text-decoration: underline; }
 
-<style>
-        ul {
-            list-style:none;
-            padding-left:0;
-            line-height:160%;
-        }
-    </style>
+    /* Header row */
+    .top-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: baseline;
+      gap: 12px;
+    }
 
+    /* Bio row */
+    .bio-row {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .photo {
+      width: 200px;
+      height: auto;
+      display: block;
+    }
 
-    <body>
-    <table width=800 border=0>
-       <tr>
-          <td width=160 align='left'>
-              <p id='p3' class=paragraphs>[name] </p>
-          </td>
-          <td qidth=640 align='left'>
-              <p id='p1' class=paragraphs><chinese>[other name]</chinese> </p>
-          </td>
-       </tr>
-    </table>
+    /* “Numbered lines” that are not <li> */
+    .line {
+      font-size: 18px;
+      margin-bottom: 6.5px;
+    }
+    .num {
+      display: inline-block;
+      width: 2ch;
+    }
 
-<hr>
+    /* Links */
+    a { color: inherit; }
+    a:focus { outline: 2px dotted #666; outline-offset: 2px; }
 
-    <table width=800>
-       <tr>
-          <td width=200 align='right' id='p2'> <B><a href='#research'>Research</a></B>
-          </td>
-          <td width=400 align='center' id='p2'> <B><a href='#writing'>Notes</a></B>
-          </td>
-          <td width=200 align='left' id='p2'> <B><a href='#teaching'>Teaching</a></B>
-          </td>
-       </tr>
-    </table>
+    /* Small helpers */
+    .spacer-8 { height: 8px; }
+    .spacer-12 { height: 12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
 
-<hr>
+    <!-- Names -->
+    <div class="top-row">
+      <p class="name-zh">Your Name</p>
+      <p class="name-en"><span lang="zh">你的中文名</span></p>
+    </div>
 
-    <table width=800 border=0>
-       <tr>
-          <td width=250 align='left'>
-              <img src='photo.JPG' WIDTH=200 HEIGHT=auto>
-          <td/>
-          <td valign='top'>
-              <p id='p2' class='paragraphs'>I am a ... </p>
-              <p id='p2' class='paragraphs'>I obtained ... </p>
-              <p id='p2' class='paragraphs'>Email: </p>
-              <p id='p2' class='paragraphs'>Office: </p>
-          </td>
-       </tr>
-    </table>
+    <hr class="rule" />
 
-        <hr>
+    <!-- Nav -->
+    <nav class="nav">
+      <a href="#research">Research</a>
+      <a href="#notes">Notes</a>
+      <a href="#teaching">Teaching</a>
+    </nav>
 
-    <table width=800 border=0>
-       <tr>
-          <td>
-              <p id='research' class='paragraphs'><B>Research</B></p>
-              <p id='p2' class='paragraphs'>My research interest is  </p>
-              <p id='p2' class='paragraphs'>More specifically, </p>
+    <hr class="rule" />
 
-          </td>
-       </tr>
-       <tr>
-          <td>
+    <!-- Bio -->
+    <div class="bio-row">
+      <div>
+        <img class="photo" src="photo.jpg" alt="Portrait of Your Name" />
+      </div>
+      <div>
+        <p class="p">
+          I am a (postdoctoral) Assistant Professor (RTPC) in Mathematics at University of Southern California.
+          Here is my <a href="resume.pdf">CV</a>.
+        </p>
+        <p class="p">
+          I obtained my PhD degree at Northwestern University in Spring 2023 under the supervision of
+          <a href="https://www.mathematics.utoronto.ca/people/directories/all-faculty/emmy-murphy">Emmy Murphy</a>
+          and <a href="https://sites.math.northwestern.edu/~zaslow/">Eric Zaslow</a>. I obtained my Bachelor's degree at Peking University in China.
+        </p>
+        <p class="p">Email: youremail [at] usc.edu</p>
+        <p class="p">Office: Your Office, USC.</p>
+      </div>
+    </div>
 
-              <p id='p2' class='paragraphs'><B>Papers and Preprints</B></p>
-          
-              <ul style="list-style-type:none; padding: 0;">
-              <li style="font-family: Times; font-size: 18px; margin-bottom: 6.5px">2. </li>
-              <li style="font-family: Times; font-size: 18px; margin-bottom: 6.5px">1. </li>
-              </ul>
+    <hr class="rule" />
 
-              <p id='p2' class='paragraphs'><B>Research Notes</B></p>
-          
-              <ul style="list-style-type:none; padding: 0;">
-              <li style="font-family: Times; font-size: 18px; margin-bottom: 6.5px">1. </li>
-              </ul>
+    <!-- Research -->
+    <section id="research">
+      <p class="section-title">Research</p>
+      <p class="p">
+        My research interest is symplectic and contact topology. Roughly speaking, symplectic geometry is the geometry
+        of generalized phase spaces in Hamiltonian mechanics, encoding both the position and the momentum of the objects.
+        The word “symplectic” is borrowed from ancient Greek which means “complex”.
+      </p>
+      <p class="p">
+        More specifically, my research interest is in algebraic and categorical invariants in symplectic and contact topology
+        coming from microlocal sheaf theory, pseudo-holomorphic curves and generating families, with their connections to
+        cluster algebras, mirror symmetry, noncommutative geometry, algebraic K-theory and persistence modules. I am also
+        interested in the flexibility side of symplectic and contact topology involving h-principles.
+      </p>
 
-          </td>
-       </tr>
-    </table>
+      <div class="spacer-12"></div>
 
-<hr>
+      <p class="section-title">Papers and Preprints</p>
 
-    <table width=800 border=0 height=80>
-       <tr>
-           <td>
-               <p id='writing' class='paragraphs'><B>Notes</B></p>
-               <ul style="list-style-type:none"; margin: 0;  padding: 0;>
-               <li id='p2'>2. </li>
-               <li id='p2'>1. </li>
-               </ul>
-           </td>
-       </tr>
-       <tr>
-           <td>
-               <p id='writing' class='paragraphs'><B>Slides</B></p>
-               <ul style="list-style-type:none"; margin: 0;  padding: 0;>
-               <li id='p2'>2. </li>
-               <li id='p2'>1. </li>
-               </ul>
-           </td>
-       </tr>
-    </table>
+      <!-- Numbered entries without <li> -->
+      <p class="line"><span class="num">14.</span> Sheaf quantization of Lagrangian correspondence in Weinstein manifolds, joint with
+        <a href="https://math.berkeley.edu/~nadler/">David Nadler</a> and
+        <a href="https://sites.google.com/view/vivek-shende/home?authuser=1">Vivek Shende</a>, in preparation.</p>
 
-<hr>
+      <p class="line"><span class="num">13.</span> S^1-action on the Hochschild homology of the Tamarkin category, joint with
+        <a href="https://byzhang.cn/">Bingyu Zhang</a>, in preparation.</p>
 
-    <table width=800 border=0 height=160>
-       <tr>
-           <td>
-               <p id='teaching' class='paragraphs'><B>Teaching</B></p>
+      <p class="line"><span class="num">12.</span> Decompositions of augmentation varieties via weaves and rulings, joint with
+        <a href="https://www.math.stonybrook.edu/~jasplund/">Johan Asplund</a>,
+        <a href="https://sites.google.com/view/orsola-capovilla-searle/?authuser=1">Orsola Capovilla-Searle</a>,
+        <a href="https://sites.google.com/view/jmhughes/home/?authuser=1">James Hughes</a>,
+        <a href="https://www.bard.edu/faculty/details/?id=4488">Caitlin Leverson</a> and
+        <a href="https://angelamath.com/">Angela Wu</a>, in preparation.</p>
 
-               <p id='p2' class='paragraphs'>Instructor</p>
+      <p class="line"><span class="num">11.</span> C^0-rigidity of Legendrian submanifolds via sheaf quantization, joint with
+        <a href="https://sites.google.com/view/tomohiro-asano">Tomohiro Asano</a>,
+        <a href="https://sites.google.com/view/yuichi-ike">Yuichi Ike</a> and
+        <a href="https://chriskuo0.github.io/homepage/">Christopher Kuo</a>, in preparation.</p>
 
-               <ul style="list-style-type:none"; margin: 0;  padding: 0;>
-               <li id='p2'>MATH </li>
-               <li id='p2'>MATH </li>
-               <li id='p2'>MATH </li>
-               <li id='p2'>MATH </li>
+      <p class="line"><span class="num">10.</span> Positive microlocal holonomies are globally regular, joint with
+        <a href="https://www.math.ucdavis.edu/~casals/">Roger Casals</a>,
+        <a href="https://arxiv.org/abs/2409.07435">arXiv</a>.</p>
 
-               <p id='p2' class='paragraphs'>Teaching Assistant</p>
-               <ul style="list-style-type:none"; margin: 0;  padding: 0;>
-               <li id='p2'>MATH </li>
-               <li id='p2'>MATH </li>
-               <li id='p2'>MATH </li>
-               <li id='p2'>MATH </li>
-               <li id='p2'>MATH </li>
-               </ul>
-           </td>
-        </tr>
-    </table>
+      <p class="line"><span class="num">9.</span> Relative Calabi-Yau structure on microlocalization, joint with
+        <a href="https://chriskuo0.github.io/homepage/">Christopher Kuo</a>,
+        <a href="https://arxiv.org/abs/2408.04085">arXiv</a>.</p>
 
+      <p class="line"><span class="num">8.</span> Duality and kernels in microlocal geometry, joint with
+        <a href="https://chriskuo0.github.io/homepage/">Christopher Kuo</a>,
+        <i>Int. Math. Res. Not.</i> 2025, no.6, 1-34,
+        <a href="https://academic.oup.com/imrn/article/2025/6/rnaf070/8092331">journal</a>,
+        <a href="https://arxiv.org/abs/2405.15211">arXiv</a>.</p>
 
+      <p class="line"><span class="num">7.</span> Lagrangian cobordism and shadow distance in Tamarkin category, joint with
+        <a href="https://sites.google.com/view/tomohiro-asano">Tomohiro Asano</a> and
+        <a href="https://sites.google.com/view/yuichi-ike">Yuichi Ike</a>,
+        <i>Sel. Math. New Ser.</i> 31, 45 (2025),
+        <a href="https://link.springer.com/article/10.1007/s00029-025-01034-9">journal</a>,
+        <a href="https://arxiv.org/abs/2312.14429">arXiv</a>.</p>
 
+      <p class="line"><span class="num">6.</span> Existence of generating families on Lagrangian cobordisms,
+        <i>Math. Ann.</i> 390 (2024): 5471–5494,
+        <a href="https://link.springer.com/article/10.1007/s00208-024-02913-w">journal</a>,
+        <a href="https://arxiv.org/abs/2308.05727">arXiv</a>.</p>
+
+      <p class="line"><span class="num">5.</span> Lagrangian cobordism functor in microlocal sheaf theory II,
+        <i>J. Sympl. Geom.</i> 23 no.3 (2025): 599-672,
+        <a href="https://intlpress.com/JDetail/1943012377408618498">journal</a>,
+        <a href="https://arxiv.org/abs/2308.05089">arXiv</a>.</p>
+
+      <p class="line"><span class="num">4.</span> Spherical adjunction and Serre functor from microlocalization, joint with
+        <a href="https://chriskuo0.github.io/homepage/">Christopher Kuo</a>,
+        <a href="https://arxiv.org/abs/2210.06643">arXiv</a>.</p>
+
+      <p class="line"><span class="num">3.</span> Conjugate fillings and Legendrian weaves, joint with
+        <a href="https://www.math.ucdavis.edu/~casals/">Roger Casals</a>,
+        <a href="https://arxiv.org/abs/2210.02039">arXiv</a>.</p>
+
+      <p class="line"><span class="num">2.</span> Lagrangian cobordism functor in microlocal sheaf theory I,
+        <i>J. Topol.</i> 16.3 (2023): 1113-1166,
+        <a href="https://londmathsoc.onlinelibrary.wiley.com/doi/full/10.1112/topo.12310">journal</a>,
+        <a href="https://arxiv.org/abs/2108.10914">arXiv</a>.</p>
+
+      <p class="line"><span class="num">1.</span> Estimating Reeb chords using microlocal sheaf theory,
+        <a href="https://arxiv.org/abs/2106.04079">arXiv</a>.</p>
+
+      <div class="spacer-12"></div>
+
+      <p class="section-title">Research Notes</p>
+      <p class="line"><span class="num">1.</span> Functoriality of sheaf categories over Weinstein manifolds,
+        <a href="Functoriality of sheaves.pdf">pdf</a>. The mathematical content is essentially extracted from
+        <i>Lagrangian cobordism functor in microlocal sheaf theory</i> Section 3.2.</p>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- Notes -->
+    <section id="notes">
+      <p class="section-title">Notes</p>
+      <p class="line"><span class="num">2.</span> <a href="h-principle in symplectic geometry.pdf">h-principle in symplectic geometry</a></p>
+      <p class="line"><span class="num">1.</span> <a href="Sheaf Theory in Symplectic Geometry.pdf">Sheaf theory in symplectic geometry</a></p>
+
+      <div class="spacer-12"></div>
+
+      <p class="section-title">Slides</p>
+      <p class="line"><span class="num">8.</span> BIRS Workshop — <a href="BIRS Workshop.pdf">Regular functions on the moduli of Lagrangian fillings</a></p>
+      <p class="line"><span class="num">7.</span> AMS Fall 2024 Western Sectional Meeting — <a href="AMS Sectional 2024.pdf">Relative Calabi-Yau structure on microlocal sheaves</a></p>
+      <p class="line"><span class="num">6.</span> INU 15th International Symposium on National Sciences — <a href="INU - generating family.pdf">Generating families on Lagrangian cobordisms</a></p>
+      <p class="line"><span class="num">5.</span> PKU Algebra &amp; Geometry Mini Forum — <a href="PKU - Spherical adjunction.pdf">Duality and spherical adjunction from microlocalization</a></p>
+      <p class="line"><span class="num">4.</span> TJU Geometry &amp; Topology Seminar — <a href="TJU - Conjugate fillings and weaves.pdf">Conjugate fillings and Legendrian weaves</a></p>
+      <p class="line"><span class="num">3.</span> Uppsala Symplectic Geometry Seminar — <a href="Uppsala - Lagrangian cobordism functor.pdf">Lagrangian cobordism functor in sheaf theory</a></p>
+      <p class="line"><span class="num">2.</span> Symplectic Zoominar — <a href="Short talk - estimating Reeb chords.pdf">Estimating Reeb chords using microlocal sheaf theory</a></p>
+      <p class="line"><span class="num">1.</span> Kylerec Student Seminar — <a href="An introduction to loose Legendrians.pdf">An introduction to loose Legendrian submanifolds</a></p>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- Teaching -->
+    <section id="teaching">
+      <p class="section-title">Teaching</p>
+
+      <p class="p"><strong>Instructor</strong></p>
+      <p class="line"><span class="num">•</span> MATH 535a, Differential Topology, Spring 2025, USC,
+        <a href="Math_535_syllabus.pdf">Syllabus</a>,
+        <a href="Math_535_lecture.pdf">Lecture notes</a></p>
+      <p class="line"><span class="num">•</span> MATH 225, Linear Algebra and Differential Equations, Fall 2024, USC</p>
+      <p class="line"><span class="num">•</span> MATH 126g, Calculus II, Spring 2023, USC</p>
+      <p class="line"><span class="num">•</span> MATH 126g, Calculus II, Fall 2023, USC</p>
+      <p class="line"><span class="num">•</span> GRE Sub preparation, Causeway Postbaccalaureate Certificate Program, Summer 2022, Northwestern</p>
+
+      <div class="spacer-8"></div>
+
+      <p class="p"><strong>Teaching Assistant</strong></p>
+      <p class="line"><span class="num">•</span> MATH 300-BR, Foundations of Higher Mathematics, 2022, Northwestern</p>
+      <p class="line"><span class="num">•</span> MATH 290-1–3, Linear Algebra and Multi Variable Calculus, 2020–2021, Northwestern</p>
+      <p class="line"><span class="num">•</span> MATH 330-1–3, Abstract Algebra, 2020–2021, Northwestern</p>
+      <p class="line"><span class="num">•</span> MATH 220-1, Single Variable Calculus, 2019, Northwestern</p>
+      <p class="line"><span class="num">•</span> MATH 230-1, Multi Variable Calculus, 2020, Northwestern</p>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- External links -->
+    <section>
+      <p class="section-title">External links</p>
+      <p class="line"><span class="num">•</span> <a href="https://dornsife.usc.edu/mathematics/">USC Math Department</a></p>
+      <p class="line"><span class="num">•</span> <a href="https://sites.google.com/usc.edu/topologyseminar">USC Geometry &amp; Topology Seminar</a></p>
+      <p class="line"><span class="num">•</span> <a href="https://www.math.ucla.edu/~topology/latop.html">Joint Los Angeles Topology Seminar</a></p>
+      <p class="line"><span class="num">•</span> <a href="https://caltechuscag.github.io/">Caltech/USC Algebra &amp; Geometry Seminar</a></p>
+      <p class="line"><span class="num">•</span> <a href="http://www.math.northwestern.edu">Northwestern Math Department</a></p>
+    </section>
+
+  </div>
+</body>
 </html>
